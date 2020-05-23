@@ -1,6 +1,7 @@
 package com.example.emotionalbook;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -8,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -27,6 +29,8 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.advices_activity);
+        Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         Button rightArrow=(Button) findViewById(R.id.advicesRightArrow);
         rightArrow.setOnClickListener(this);
         Button leftArrow=(Button) findViewById(R.id.advicesLeftArrow);
@@ -50,5 +54,11 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
                 break;
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
     }
 }
