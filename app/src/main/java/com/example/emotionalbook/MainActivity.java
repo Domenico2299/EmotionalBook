@@ -2,6 +2,7 @@ package com.example.emotionalbook;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -23,10 +24,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button buttonToAdvices=(Button) findViewById(R.id.buttonToAdvices);
+        /*CONTROLLO RADIOBUTTON: L'utilizzo di un radiogroup non si è rilevato efficace, dato il suo layout lineare, non ho trovato nemmeno soluzioni efficaci
+        nell'utilizzo di due RadioGroup paralleli, ho quindi optato per creare una versione Custom di un RadioGroup*/
+        final RadioButton radioHappy= findViewById(R.id.radioButtonHappy);
+        final RadioButton radioAngry= findViewById(R.id.radioButtonAngry);
+        final RadioButton radioStressed= findViewById(R.id.radioButtonStressed);
+        final RadioButton radioSad= findViewById(R.id.radioButtonSad);
+        radioHappy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                radioAngry.setChecked(false);
+                radioSad.setChecked(false);
+                radioStressed.setChecked(false);
+            }
+        });
+        radioSad.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                radioAngry.setChecked(false);
+                radioHappy.setChecked(false);
+                radioStressed.setChecked(false);
+            }
+        });
+        radioAngry.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                radioHappy.setChecked(false);
+                radioSad.setChecked(false);
+                radioStressed.setChecked(false);
+            }
+        });
+        radioStressed.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                radioAngry.setChecked(false);
+                radioSad.setChecked(false);
+                radioHappy.setChecked(false);
+            }
+        });
 
+        Button buttonToAdvices= findViewById(R.id.buttonToAdvices);
         buttonToAdvices.setOnClickListener(this);
-        Button buttonToStatistiche=(Button) findViewById(R.id.buttonStatistiche);
+        Button buttonToStatistiche= findViewById(R.id.buttonStatistiche);
         buttonToStatistiche.setOnClickListener(this);
 
     }
