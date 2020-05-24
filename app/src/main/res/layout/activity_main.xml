@@ -15,6 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/come_ti_senti_oggi"
+        android:textSize="18dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -31,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintVertical_bias="0.98" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -43,9 +45,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <RadioGroup
+            android:id="@+id/group1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:orientation="vertical" >
 
@@ -53,37 +57,47 @@
                 android:id="@+id/radioButtonHappy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layoutDirection="rtl"
-                android:drawableRight="@drawable/emoji_happy"/>
+                android:button="@null"
+                android:layout_margin="20dp"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:drawableTop="@drawable/emoji_happy"/>
 
             <RadioButton
                 android:id="@+id/radioButtonAngry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layoutDirection="rtl"
-                android:drawableRight="@drawable/emoji_angry"/>
+                android:button="@null"
+                android:layout_margin="20dp"
+                android:drawableTop="@drawable/emoji_angry"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle" />
         </RadioGroup>
 
         <RadioGroup
+            android:id="@+id/group2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:orientation="vertical" >
             <RadioButton
                 android:id="@+id/radioButtonSad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableLeft="@drawable/emoji_sad" />
+                android:button="@null"
+                android:layout_margin="20dp"
+                android:drawableTop="@drawable/emoji_sad"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle" />
+
+
             <RadioButton
                 android:id="@+id/radioButtonStressed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableLeft="@drawable/emoji_stress" />
+                android:button="@null"
+                android:layout_margin="20dp"
+                android:drawableTop="@drawable/emoji_stress"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle" />
         </RadioGroup>
     </LinearLayout>
 
@@ -106,6 +120,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.56" />
+
+    <Button
+        android:id="@+id/buttonStatistiche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/statistiche"
+        app:layout_constraintBottom_toTopOf="@+id/buttonToAdvices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSend" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
