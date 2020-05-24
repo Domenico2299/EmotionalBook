@@ -26,42 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         /*CONTROLLO RADIOBUTTON: L'utilizzo di un radiogroup non si è rilevato efficace, dato il suo layout lineare, non ho trovato nemmeno soluzioni efficaci
         nell'utilizzo di due RadioGroup paralleli, ho quindi optato per creare una versione Custom di un RadioGroup*/
-        final RadioButton radioHappy= findViewById(R.id.radioButtonHappy);
-        final RadioButton radioAngry= findViewById(R.id.radioButtonAngry);
-        final RadioButton radioStressed= findViewById(R.id.radioButtonStressed);
-        final RadioButton radioSad= findViewById(R.id.radioButtonSad);
-        radioHappy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                radioAngry.setChecked(false);
-                radioSad.setChecked(false);
-                radioStressed.setChecked(false);
-            }
-        });
-        radioSad.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                radioAngry.setChecked(false);
-                radioHappy.setChecked(false);
-                radioStressed.setChecked(false);
-            }
-        });
-        radioAngry.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                radioHappy.setChecked(false);
-                radioSad.setChecked(false);
-                radioStressed.setChecked(false);
-            }
-        });
-        radioStressed.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                radioAngry.setChecked(false);
-                radioSad.setChecked(false);
-                radioHappy.setChecked(false);
-            }
-        });
+
 
         Button buttonToAdvices= findViewById(R.id.buttonToAdvices);
         buttonToAdvices.setOnClickListener(this);
