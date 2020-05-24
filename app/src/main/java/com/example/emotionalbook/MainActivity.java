@@ -26,28 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        SeekBar emotseekbar=findViewById(R.id.emotseekbar);
-        final TextView textViewSeekBar=findViewById(R.id.textViewSeekBar);
-        emotseekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                int val = (progress * (seekBar.getWidth() - 2 * seekBar.getThumbOffset())) / seekBar.getMax();
-                textViewSeekBar.setText("" + progress);
-                textViewSeekBar.setX(seekBar.getX() + val + seekBar.getThumbOffset() / 2);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-
-
         Button buttonToAdvices= findViewById(R.id.buttonToAdvices);
         buttonToAdvices.setOnClickListener(this);
         Button buttonToStatistiche= findViewById(R.id.buttonStatistiche);

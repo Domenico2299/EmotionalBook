@@ -15,7 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/come_ti_senti_oggi"
-        android:textSize="18dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -32,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.98" />
+        app:layout_constraintVertical_bias="0.97" />
 
     <com.example.emotionalbook.ToggleButtonGroupTableLayout
         android:id="@+id/radGroup1"
@@ -44,86 +45,66 @@
 
         <TableRow>
 
+
+            <RadioButton
+                android:id="@+id/radioButtonHappy"
+                android:layout_width="144dp"
+                android:layout_height="144dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:button="@drawable/happy_btn_radio" />
+
             <RadioButton
                 android:id="@+id/radioButtonSad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:button="@null"
-                android:drawableTop="@drawable/emoji_sad"
-                android:drawableBottom="?android:attr/listChoiceIndicatorSingle" />
-
-
-            <RadioButton
-                android:id="@+id/radioButtonStressed"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:button="@null"
-                android:drawableTop="@drawable/emoji_stress"
-                android:drawableBottom="?android:attr/listChoiceIndicatorSingle" />
+                android:layout_width="144dp"
+                android:layout_height="144dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:button="@drawable/sad_btn_radio" />
 
         </TableRow>
 
         <TableRow>
 
             <RadioButton
-                android:id="@+id/radioButtonHappy"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:button="@null"
-                android:drawableTop="@drawable/emoji_happy"
-                android:drawableBottom="?android:attr/listChoiceIndicatorSingle" />
+                android:id="@+id/radioButtonAngry"
+                android:layout_width="144dp"
+                android:layout_height="144dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:button="@drawable/angry_btn_radio" />
 
             <RadioButton
-                android:id="@+id/radioButtonAngry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:button="@null"
-                android:drawableTop="@drawable/emoji_angry"
-                android:drawableBottom="?android:attr/listChoiceIndicatorSingle" />
+                android:id="@+id/radioButtonStressed"
+                android:layout_width="144dp"
+                android:layout_height="144dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:button="@drawable/stress_btn_radio" />
 
         </TableRow>
     </com.example.emotionalbook.ToggleButtonGroupTableLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+    <SeekBar
+        android:layout_width="312dp"
+        android:layout_height="49dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radGroup1">
-
-        <SeekBar
-            android:id="@+id/emotseekbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:max="10" />
-
-        <TextView
-            android:id="@+id/textViewSeekBar"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/radGroup1"
+        app:layout_constraintVertical_bias="0.525" />
 
     <Button
         android:id="@+id/buttonSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="146dp"
         android:text="@string/Invia"
         app:layout_constraintBottom_toTopOf="@+id/buttonToAdvices"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radGroup1"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <Button
         android:id="@+id/buttonStatistiche"
@@ -133,8 +114,7 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonToAdvices"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSend"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSend" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
