@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,8 +26,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*CONTROLLO RADIOBUTTON: L'utilizzo di un radiogroup non si è rilevato efficace, dato il suo layout lineare, non ho trovato nemmeno soluzioni efficaci
-        nell'utilizzo di due RadioGroup paralleli, ho quindi optato per creare una versione Custom di un RadioGroup*/
+        SeekBar emotseekbar=findViewById(R.id.emotseekbar);
+        final TextView textViewSeekBar=findViewById(R.id.textViewSeekBar);
+        emotseekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                int val = (progress * (seekBar.getWidth() - 2 * seekBar.getThumbOffset())) / seekBar.getMax();
+                textViewSeekBar.setText("" + progress);
+                textViewSeekBar.setX(seekBar.getX() + val + seekBar.getThumbOffset() / 2);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
 
         Button buttonToAdvices= findViewById(R.id.buttonToAdvices);

@@ -88,13 +88,29 @@
         </TableRow>
     </com.example.emotionalbook.ToggleButtonGroupTableLayout>
 
-    <SeekBar
-        android:layout_width="312dp"
-        android:layout_height="49dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/buttonSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radGroup1" />
+        app:layout_constraintTop_toBottomOf="@+id/radGroup1">
+
+        <SeekBar
+            android:id="@+id/emotseekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:max="10" />
+
+        <TextView
+            android:id="@+id/textViewSeekBar"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonSend"
@@ -117,7 +133,8 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonToAdvices"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSend" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSend"
+        app:layout_constraintVertical_bias="0.666" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
