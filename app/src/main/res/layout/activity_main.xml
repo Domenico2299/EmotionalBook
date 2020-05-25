@@ -24,17 +24,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.113" />
 
-    <Button
-        android:id="@+id/buttonToAdvices"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/consigli_di_oggi"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.97" />
-
     <com.example.emotionalbook.ToggleButtonGroupTableLayout
         android:id="@+id/radGroup1"
         android:layout_width="wrap_content"
@@ -86,6 +75,7 @@
     </com.example.emotionalbook.ToggleButtonGroupTableLayout>
 
     <SeekBar
+        android:id="@+id/seekBar"
         android:layout_width="312dp"
         android:layout_height="49dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonSend"
@@ -99,22 +89,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Invia"
-        app:layout_constraintBottom_toTopOf="@+id/buttonToAdvices"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radGroup1"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintVertical_bias="0.85" />
 
-    <Button
-        android:id="@+id/buttonStatistiche"
+    <TextView
+        android:id="@+id/textViewIntensità"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/statistiche"
-        app:layout_constraintBottom_toTopOf="@+id/buttonToAdvices"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSend" />
+        app:layout_constraintTop_toBottomOf="@+id/radGroup1"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

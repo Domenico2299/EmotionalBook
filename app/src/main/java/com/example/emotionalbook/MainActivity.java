@@ -1,22 +1,13 @@
 package com.example.emotionalbook;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.util.Log;
-import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity{
 
 
     @Override
@@ -26,24 +17,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button buttonToAdvices= findViewById(R.id.buttonToAdvices);
-        buttonToAdvices.setOnClickListener(this);
-        Button buttonToStatistiche= findViewById(R.id.buttonStatistiche);
-        buttonToStatistiche.setOnClickListener(this);
+        final TextView intensità=findViewById(R.id.textViewIntensità);
+        intensità.setText(String.valueOf(0));
+        SeekBar seekBar=findViewById(R.id.seekBar);
+        seekBar.setMax(10);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                intensità.setText(String.valueOf(progress));
+            }
 
-    }
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.buttonToAdvices:
-                Intent intent=new Intent(MainActivity.this,AdvicesActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.buttonStatistiche:
-                Intent intent2=new Intent(MainActivity.this,StatisticsActivity.class);
-                startActivity(intent2);
-                break;
-        }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
     }
 
 }
