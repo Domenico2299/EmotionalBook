@@ -68,10 +68,6 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.statistics:
-                Intent intent=new Intent(AdvicesActivity.this,StatisticsActivity.class);
-                startActivity(intent);
-                return true;
             case R.id.homepage:
                 Intent intent2=new Intent(AdvicesActivity.this,MainActivity.class);
                 startActivity(intent2);
