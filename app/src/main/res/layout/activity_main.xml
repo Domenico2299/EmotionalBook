@@ -39,8 +39,8 @@
                 android:id="@+id/radioButtonHappy"
                 android:layout_width="144dp"
                 android:layout_height="144dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
                 android:button="@drawable/happy_btn_radio" />
 
             <RadioButton
@@ -59,8 +59,8 @@
                 android:id="@+id/radioButtonAngry"
                 android:layout_width="144dp"
                 android:layout_height="144dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
                 android:button="@drawable/angry_btn_radio" />
 
             <RadioButton
@@ -76,43 +76,36 @@
 
     <SeekBar
         android:id="@+id/seekBar"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:progress="@color/colorPrimary"
-        android:progressDrawable="@drawable/seekbar_style"
-        android:splitTrack="false"
-        android:thumb="@drawable/custom_thumb"
+        android:layout_width="312dp"
+        android:layout_height="49dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radGroup1"
-        app:layout_constraintVertical_bias="0.64" />
+        app:layout_constraintVertical_bias="0.525" />
 
     <Button
         android:id="@+id/buttonSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/roundedbutton"
         android:text="@string/Invia"
-        android:textColor="#eeffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radGroup1"
-        app:layout_constraintVertical_bias="0.87" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <TextView
         android:id="@+id/textViewIntensità"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radGroup1"
-        app:layout_constraintVertical_bias="0.84000003"
-        android:textSize="20dp"/>
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

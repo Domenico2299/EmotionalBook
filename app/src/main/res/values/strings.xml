@@ -7,4 +7,7 @@
     <string name="consigli_di_oggi">Consigli di oggi</string>
     <string name="come_ti_senti_oggi">Come ti senti oggi?</string>
     <string name="statistiche">Statistiche</string>
+    <string name="title_activity_statistics">StatisticsActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
