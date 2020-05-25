@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity{
         dbInstance.open();
         // add to the DB and set the item idx
         item.set_id(dbInstance.insert(item));
+        dbInstance.close();
 
         Intent intent=new Intent(MainActivity.this,StatisticsActivity.class);
         startActivity(intent);
