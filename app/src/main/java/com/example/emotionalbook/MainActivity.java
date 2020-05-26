@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
@@ -94,7 +95,26 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menuhome,menu);
+
+        getMenuInflater().inflate(R.menu.menuhome, menu);
         return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.statistics:
+
+                Intent statistics = new Intent(this, StatisticsActivity.class);
+                startActivity(statistics);
+                return true;
+
+            case R.id.advices:
+
+                Intent advices = new Intent(this, AdvicesActivity.class);
+                startActivity(advices);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
