@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="progressBar1" type="id" />
+    <item name="progressBar2" type="id" />
+    <item name="progressBar3" type="id" />
+    <item name="progressBar4" type="id" />
+    <item name="seekBar1" type="id" />
+    <item name="seekBar2" type="id" />
+    <item name="seekBar3" type="id" />
+    <item name="seekBar4" type="id" />
+</resources>

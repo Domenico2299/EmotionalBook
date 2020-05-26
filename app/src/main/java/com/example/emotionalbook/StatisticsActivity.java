@@ -30,6 +30,7 @@ public class StatisticsActivity extends AppCompatActivity {
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setElevation(0);
+        getSupportActionBar().setTitle("Statistiche");
 
     }
 
@@ -45,14 +46,16 @@ public class StatisticsActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.home:
 
-                Intent home = new Intent(this, MainActivity.class);
-                startActivity(home);
+                Intent home = new Intent(StatisticsActivity.this, MainActivity.class);
+                home.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivityIfNeeded(home, 0);
                 return true;
 
             case R.id.advices:
 
                 Intent advices = new Intent(this, AdvicesActivity.class);
-                startActivity(advices);
+                advices.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivityIfNeeded(advices, 0);
                 return true;
         }
 

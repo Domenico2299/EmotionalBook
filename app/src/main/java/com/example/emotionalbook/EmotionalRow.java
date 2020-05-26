@@ -22,8 +22,8 @@ public class EmotionalRow {
         ContentValues cv = new ContentValues();
         cv.put(EmotionalDatabaseContract.EmotionRows.COLUMN_NAME_STATE, this.state);
         cv.put(EmotionalDatabaseContract.EmotionRows.COLUMN_INTENSITY, this.intensity);
-        cv.put(EmotionalDatabaseContract.EmotionRows.COLUMN_NAME_DATE, this.createOn.getDayOfMonth()+"/"+createOn.getMonth()+"/"+createOn.getYear());
-        Log.i("RIGA INSERITA NEL DATABASE", this.state+" ,"+this.intensity+" ,"+this.createOn.getDayOfMonth()+"/"+createOn.getMonth()+"/"+createOn.getYear());
+        cv.put(EmotionalDatabaseContract.EmotionRows.COLUMN_NAME_DATE, this.createOn.getDayOfWeek()+"/"+this.createOn.getMonth()+"/"+createOn.getMonth()+"/"+createOn.getYear());
+        Log.i("RIGA INSERITA NEL DATABASE", this.state+" ,"+this.intensity+" ,"+this.createOn.getDayOfWeek()+"/"+this.createOn.getDayOfMonth()+"/"+this.createOn.getMonth()+"/"+this.createOn.getYear());
         return cv;
     }
 

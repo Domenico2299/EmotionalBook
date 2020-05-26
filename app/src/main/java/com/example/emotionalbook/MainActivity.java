@@ -1,6 +1,7 @@
 package com.example.emotionalbook;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity{
     LocalDate date;
     String state;
     long intensity;
+    TextView textViewAnswer;
+    String cambioIdea="Come ti senti oggi?";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,9 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        textViewAnswer=findViewById(R.id.textView);
+        textViewAnswer.setText(cambioIdea);
 
         final TextView intensitàText=findViewById(R.id.textViewIntensità);
         intensitàText.setText(String.valueOf(0));
@@ -84,12 +90,16 @@ public class MainActivity extends AppCompatActivity{
         // create and open DB
         dbInstance=EmotionalDatabaseAdapter.getInstance(this);
         dbInstance.open();
+
+
         // add to the DB and set the item idx
         item.set_id(dbInstance.insert(item));
         dbInstance.close();
 
         Intent intent=new Intent(MainActivity.this,StatisticsActivity.class);
         startActivity(intent);
+        cambioIdea="Cambiato idea?";
+        textViewAnswer.setText(cambioIdea);
 
     }
 
@@ -104,17 +114,20 @@ public class MainActivity extends AppCompatActivity{
         switch (item.getItemId()) {
             case R.id.statistics:
 
-                Intent statistics = new Intent(this, StatisticsActivity.class);
-                startActivity(statistics);
+                Intent statistics = new Intent(MainActivity.this, StatisticsActivity.class);
+                statistics.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivityIfNeeded(statistics, 0);
                 return true;
 
             case R.id.advices:
 
                 Intent advices = new Intent(this, AdvicesActivity.class);
-                startActivity(advices);
+                advices.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivityIfNeeded(advices, 0);
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }

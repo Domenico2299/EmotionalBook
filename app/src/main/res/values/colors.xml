@@ -3,4 +3,8 @@
     <color name="colorPrimary">#00bfa5</color>
     <color name="colorPrimaryDark">#008e76</color>
     <color name="colorAccent">#009688</color>
+    <color name="colorSeekBar1">#00c853</color>
+    <color name="colorSeekBar2"></color>
+    <color name="colorSeekBar3"></color>
+    <color name="colorSeekBar4"></color>
 </resources>

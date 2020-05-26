@@ -7,7 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+
 class EmotionalDatabaseAdapter {
+    private LocalDate date=LocalDate.now(ZoneId.systemDefault());
     private static String TAG = "DBAdapter";
     private static EmotionalDatabaseAdapter dbInstance;
 
@@ -51,8 +55,19 @@ class EmotionalDatabaseAdapter {
         return idx;
     }
 
-    public Cursor getAllEntries() {
-        return db.query(EmotionalDatabaseContract.EmotionRows.TABLE_NAME, null, null, null, null, null, null);
+    public Cursor getYear() {
+        String[] selectionArgs ={String.valueOf(date.getYear())};
+        return db.query(EmotionalDatabaseContract.EmotionRows.TABLE_NAME,EmotionalDatabaseContract.columns, "substr(date,-4)=?",selectionArgs, null, null, null);
+    }
+    public Cursor getMonth(){
+        String orderBy=EmotionalDatabaseContract.EmotionRows._ID+" DESC";
+        String limit=String.valueOf(31);
+        return db.query(EmotionalDatabaseContract.EmotionRows.TABLE_NAME,EmotionalDatabaseContract.columns, null,null, null, null, orderBy,limit);
+    }
+    public Cursor getWeek(){
+        String orderBy=EmotionalDatabaseContract.EmotionRows._ID+" DESC";
+        String limit=String.valueOf(7);
+        return db.query(EmotionalDatabaseContract.EmotionRows.TABLE_NAME,EmotionalDatabaseContract.columns, null,null, null, null, orderBy,limit);
     }
 
 }

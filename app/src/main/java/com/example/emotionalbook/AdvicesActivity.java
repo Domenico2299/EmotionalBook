@@ -39,6 +39,7 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
         Button leftArrow=(Button) findViewById(R.id.advicesLeftArrow);
         leftArrow.setOnClickListener(this);
         fragmentManager.beginTransaction().add(R.id.container,one).commit();
+        getSupportActionBar().setTitle("Consigli");
     }
     public void onClick(View v){
         switch (v.getId()){
@@ -72,14 +73,16 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
         switch (item.getItemId()) {
             case R.id.home:
 
-                Intent home = new Intent(this, MainActivity.class);
-                startActivity(home);
+                Intent home = new Intent(AdvicesActivity.this, MainActivity.class);
+                home.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivityIfNeeded(home, 0);
                 return true;
 
             case R.id.statistics:
 
-                Intent statistics = new Intent(this, StatisticsActivity.class);
-                startActivity(statistics);
+                Intent statistics = new Intent(AdvicesActivity.this, StatisticsActivity.class);
+                statistics.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivityIfNeeded(statistics, 0);
                 return true;
         }
 

@@ -6,6 +6,8 @@ class EmotionalDatabaseContract {
     static final String DATABASE_NAME = "emotional_database";
     static final int DATABASE_VERSION = 1;
 
+    static final String[] columns = {"state", "intensity","date"};
+
     private EmotionalDatabaseContract() {}
     /* Inner class that defines the table contents */
     static abstract class EmotionRows implements BaseColumns {
