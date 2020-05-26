@@ -59,21 +59,30 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+
+        getMenuInflater().inflate(R.menu.menuconsigli, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.homepage:
-                Intent intent2=new Intent(AdvicesActivity.this,MainActivity.class);
-                startActivity(intent2);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.home:
+
+                Intent home = new Intent(this, MainActivity.class);
+                startActivity(home);
                 return true;
 
+            case R.id.statistics:
+
+                Intent statistics = new Intent(this, StatisticsActivity.class);
+                startActivity(statistics);
+                return true;
         }
-        return false;
+
+        return super.onOptionsItemSelected(item);
     }
 }
