@@ -7,17 +7,127 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.PlaceholderFragment">
 
-    <TextView
-        android:id="@+id/section_label"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        tools:ignore="MissingConstraints">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:progress="@color/colorSeekBar1"
+        android:progressDrawable="@drawable/stat_seekbar_style1"
+        android:splitTrack="false"
+        android:thumb="@null"
+
+        app:layout_constraintBottom_toTopOf="@+id/seekBar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/emoji_happy"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:progress="@color/colorSeekBar2"
+        android:progressDrawable="@drawable/stat_seekbar_style2"
+        android:splitTrack="false"
+        android:thumb="@null"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/emoji_sad"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <SeekBar
+        android:id="@+id/seekBar3"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:progress="@color/colorSeekBar3"
+        android:progressDrawable="@drawable/stat_seekbar_style3"
+        android:splitTrack="false"
+        android:thumb="@null"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAdvices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/emoji_stress"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar1" />
+
+    <SeekBar
+        android:id="@+id/seekBar4"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:progress="@color/colorSeekBar4"
+        android:progressDrawable="@drawable/stat_seekbar_style4"
+        android:splitTrack="false"
+        android:thumb="@null"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAdvices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/emoji_angry"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar3" />
+
+    <ImageView
+        android:id="@+id/emoji_happy"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/emoji_happy"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar1"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBar1" />
+
+    <ImageView
+        android:id="@+id/emoji_sad"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/emoji_sad"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar2"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBar2" />
+
+    <ImageView
+        android:id="@+id/emoji_stress"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/emoji_stress"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar3"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBar3" />
+
+    <ImageView
+        android:id="@+id/emoji_angry"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/emoji_angry"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar4"
+        app:layout_constraintEnd_toStartOf="@+id/seekBar4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBar4" />
+
+    <Button
+        android:id="@+id/buttonAdvices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        android:background="@null"
+        android:stateListAnimator="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

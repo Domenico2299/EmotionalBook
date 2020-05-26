@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.SeekBar;
 
 import com.example.emotionalbook.ui.main.SectionsPagerAdapter;
 
@@ -27,6 +29,7 @@ public class StatisticsActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setElevation(0);
@@ -54,11 +57,15 @@ public class StatisticsActivity extends AppCompatActivity {
             case R.id.advices:
 
                 Intent advices = new Intent(this, AdvicesActivity.class);
-                advices.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                startActivityIfNeeded(advices, 0);
+                startActivity(advices);
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openAdvices(View view) {
+        Intent advices = new Intent(this, AdvicesActivity.class);
+        startActivity(advices);
     }
 }

@@ -10,7 +10,8 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        tools:ignore="MissingConstraints">
 
         <include
             android:id="@+id/toolbar"
@@ -28,59 +29,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-219dp" />
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="16dp" />
 
-    <SeekBar
-        android:id="@+id/seekBar1"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:progress="@color/colorSeekBar1"
-        android:progressDrawable="@drawable/seekbar_style"
-        android:splitTrack="false"
-        android:thumb="@null"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-
-    <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:progress="@color/colorSeekBar2"
-        android:progressDrawable="@drawable/seekbar_style"
-        android:splitTrack="false"
-        android:thumb="@null"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-
-    <SeekBar
-        android:id="@+id/seekBar3"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:progress="@color/colorSeekBar1"
-        android:progressDrawable="@drawable/seekbar_style"
-        android:splitTrack="false"
-        android:thumb="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/view_pager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar1" />
-
-    <SeekBar
-        android:id="@+id/seekBar4"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:progress="@color/colorSeekBar1"
-        android:progressDrawable="@drawable/seekbar_style"
-        android:splitTrack="false"
-        android:thumb="@null"
+    <Button
+        android:id="@+id/buttonAdvices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbutton"
+        android:onClick="openAdvices"
+        android:text="@string/consigli_di_oggi"
+        android:textColor="#eeffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar3" />
+        app:layout_constraintTop_toTopOf="@+id/appBarLayout"
+        app:layout_constraintVertical_bias="0.9"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
