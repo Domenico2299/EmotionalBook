@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -59,6 +60,25 @@ public class EmotFragmentSecond extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_emo_second, container, false);
+        int happy=DatabaseManager.valWeek[0].intValue();
+        int sad=DatabaseManager.valWeek[1].intValue();
+        int stressed=DatabaseManager.valWeek[2].intValue();
+        int angry=DatabaseManager.valWeek[3].intValue();
+        int maxValue;
+        View view=inflater.inflate(R.layout.fragment_emo_second, container, false);
+
+        TextView advices=view.findViewById(R.id.advices2);
+        maxValue=Math.max(Math.max(happy,sad),Math.max(stressed,angry));
+
+        if(maxValue==happy)
+            advices.setText(R.string.happy_advice_2);
+        if(maxValue==angry)
+            advices.setText(R.string.angry_advice_2);
+        if(maxValue==sad)
+            advices.setText(R.string.sad_advice_2);
+        if(maxValue==stressed)
+            advices.setText(R.string.stress_advice_2);
+
+        return view;
     }
 }
