@@ -26,7 +26,7 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
     Fragment[] advices={one,two,three};
     FragmentManager fragmentManager = getSupportFragmentManager();
     int counter=0;
-
+    EmotionalDatabaseAdapter dbInstance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +80,10 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
 
             case R.id.statistics:
 
+                dbInstance=EmotionalDatabaseAdapter.getInstance(this);
+                dbInstance.open();
+                DatabaseManager.setStatistics(dbInstance.getYear(),dbInstance.getMonth(),dbInstance.getWeek());
+                dbInstance.close();
                 Intent statistics = new Intent(AdvicesActivity.this, StatisticsActivity.class);
                 statistics.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityIfNeeded(statistics, 0);

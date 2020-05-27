@@ -12,9 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.SeekBar;
 
-import com.example.emotionalbook.ui.main.SectionsPagerAdapter;
+import com.example.emotionalbook.ui.statistics.SectionsPagerAdapter;
 
 public class StatisticsActivity extends AppCompatActivity {
 

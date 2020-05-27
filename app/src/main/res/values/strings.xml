@@ -16,42 +16,42 @@
     <string name="statistics" />
     <string name="advices" />
 
-    <string name="happy_advice_1" >È importante saper sfruttare la propria felicità attraverso molteplici attività ricreative.
+    <string name="happy_advice_1">È importante saper sfruttare la propria felicità attraverso molteplici attività ricreative.
         Praticare uno sport è un ottimo modo per incanalare la propria energia positiva.
         L’attività fisica permette di prendersi cura di se stessi e della propria salute, migliorando l’umore e l’autostima.</string>
 
-    <string name="happy_advice_2" >Specifiche condizioni spiacevoli possono influenzare negativamente l’andamento del proprio lavoro,
+    <string name="happy_advice_2">Specifiche condizioni spiacevoli possono influenzare negativamente l’andamento del proprio lavoro,
         è importante quindi sfruttare la propria energia anche in questo, al fine di svolgere con calma e serenità i compiti più complessi.</string>
 
-    <string name="happy_advice_3" >Coltivare nuovi hobby, individualmente o in compagnia, permetterà di non mutare la propria felicità in noia,
+    <string name="happy_advice_3">Coltivare nuovi hobby, individualmente o in compagnia, permetterà di non mutare la propria felicità in noia,
         incanalando ancora una volta questa energia in attività creative ed entusiasmanti.</string>
 
-    <string name="sad_advice_1" >La tristezza spesso è generata dall’insoddisfazione è necessario dunque esprimere le proprie emozioni,
+    <string name="sad_advice_1">La tristezza spesso è generata dall’insoddisfazione è necessario dunque esprimere le proprie emozioni,
         tenere un diario o parlarne con qualcuno che sia in grado di ascoltarci.</string>
 
-    <string name="sad_advice_2" >La tristezza induce spesso all’isolamento, circondarsi di persone positive, uscire e incontrare gli amici,
+    <string name="sad_advice_2">La tristezza induce spesso all’isolamento, circondarsi di persone positive, uscire e incontrare gli amici,
         può aiutare a superare questa cattiva abitudine, distraendoci da tutto ciò che ci preoccupa.</string>
 
-    <string name="sad_advice_3" >Dedicare parte della giornata a se stessi e non farsi sopraffare dagli impegni è un ottimo punto di partenza.
+    <string name="sad_advice_3">Dedicare parte della giornata a se stessi e non farsi sopraffare dagli impegni è un ottimo punto di partenza.
         Anche il ciclo alterato del sonno ha una forte influenza sull’umore, è fondamentale dunque programmare anche la propria routine notturna,
         provando a dormire dalle sette alle nove ore al giorno.</string>
 
-    <string name="stress_advice_1" >Lo stress è un fenomeno caratterizzato da molteplici cause e conseguenze, legate all’insorgenza di sintomi come l’insonnia,
+    <string name="stress_advice_1">Lo stress è un fenomeno caratterizzato da molteplici cause e conseguenze, legate all’insorgenza di sintomi come l’insonnia,
         la stanchezza e la fatica. Per ridurre lo stress è necessario sapersi organizzare al meglio, costruendo con attenzione la propria giornata,
         ponendo gli obiettivi da raggiungere e i compiti da svolgere, per non farsi sopraffare dal panico e dall’agitazione. </string>
 
-    <string name="stress_advice_2" >Leggere, o ascoltare della buona musica, è importante, consente infatti di distaccarsi momentaneamente
+    <string name="stress_advice_2">Leggere, o ascoltare della buona musica, è importante, consente infatti di distaccarsi momentaneamente
         dallo stress per dedicare parte della giornata allo svago individuale.</string>
 
-    <string name="stress_advice_3" >Entrare in contatto con la natura può essere d’aiuto, passeggiare o pedalare all’aria aperta consente infatti
+    <string name="stress_advice_3">Entrare in contatto con la natura può essere d’aiuto, passeggiare o pedalare all’aria aperta consente infatti
         di distaccarsi dall’ambiente tipicamente scolastico o lavorativo.</string>
 
-    <string name="angry_advice_1" >La rabbia ha gravi ripercussioni sul piano sociale e relazionale, da sempre considerata dalla società come uno dei
+    <string name="angry_advice_1">La rabbia ha gravi ripercussioni sul piano sociale e relazionale, da sempre considerata dalla società come uno dei
         comportamenti meno accettabili. Chi la prova rischia inevitabilmente isolamento e depressione, nonostante ciò può essere controllata.</string>
 
-    <string name="angry_advice_2" >Programmare la propria giornata è fondamentale. Limitare la fretta permette infatti di ridurre la tensione e l’angoscia.</string>
+    <string name="angry_advice_2">Programmare la propria giornata è fondamentale. Limitare la fretta permette infatti di ridurre la tensione e l’angoscia.</string>
 
-    <string name="angry_advice_3" >Evitare di esporsi verso situazioni rischiose, soprattutto quando si è molto stanchi, è altrettanto importante.
+    <string name="angry_advice_3">Evitare di esporsi verso situazioni rischiose, soprattutto quando si è molto stanchi, è altrettanto importante.
         In tali occasioni è maggiore la possibilità di manifestare la propria rabbia verso qualcuno, in quanto maggiormente vulnerabili.</string>
 </resources>
 

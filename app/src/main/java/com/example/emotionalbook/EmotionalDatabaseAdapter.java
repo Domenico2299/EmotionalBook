@@ -48,26 +48,32 @@ class EmotionalDatabaseAdapter {
 
     }
 
-    public long insert(EmotionalRow row) {
+    public long insert(EmotionalRow row) { //METODO CHE INSERISCE UNA ROW NUOVA ED EVENTUALMENTE LA SOTITUISCE CON UNA GIà PRESENTE NELLA GIORNATA
+        String table = EmotionalDatabaseContract.EmotionRows.TABLE_NAME;
+        String whereClause = "date=?";
+        String[] whereArgs = new String[] { this.date.getDayOfWeek()+"/"+this.date.getDayOfMonth()+"/"+date.getMonth()+"/"+date.getYear() };
+        db.delete(table, whereClause, whereArgs);
+
         Log.v(TAG, "Adding todoItem to the database.");
         long idx = db.insert(EmotionalDatabaseContract.EmotionRows.TABLE_NAME, null, row.getAsContentValue());
         Log.v(TAG, "Added value idx: " + idx);
         return idx;
     }
 
-    public Cursor getYear() {
+    public Cursor getYear() { //METODO CHE RECUPERA LE ROWS DELL'ANNO CORRENTE
         String[] selectionArgs ={String.valueOf(date.getYear())};
         return db.query(EmotionalDatabaseContract.EmotionRows.TABLE_NAME,EmotionalDatabaseContract.columns, "substr(date,-4)=?",selectionArgs, null, null, null);
     }
-    public Cursor getMonth(){
+    public Cursor getMonth(){ //METODO CHE RECUPERA LE ULTIME 31 RIGHE, EQUIVALENTI AL PEGGIOR CASO (ULTIMO GIORNO DEL MESE)
         String orderBy=EmotionalDatabaseContract.EmotionRows._ID+" DESC";
         String limit=String.valueOf(31);
         return db.query(EmotionalDatabaseContract.EmotionRows.TABLE_NAME,EmotionalDatabaseContract.columns, null,null, null, null, orderBy,limit);
     }
-    public Cursor getWeek(){
+    public Cursor getWeek(){ //METODO CHE RECUPERA LE ULTIME 31 RIGHE, EQUIVALENTI AL PEGGIOR CASO (ULTIMO GIORNO DELLA SETTIMANA)
         String orderBy=EmotionalDatabaseContract.EmotionRows._ID+" DESC";
         String limit=String.valueOf(7);
         return db.query(EmotionalDatabaseContract.EmotionRows.TABLE_NAME,EmotionalDatabaseContract.columns, null,null, null, null, orderBy,limit);
     }
+
 
 }

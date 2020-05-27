@@ -3,6 +3,7 @@ package com.example.emotionalbook;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        dbInstance=EmotionalDatabaseAdapter.getInstance(this);
 
         textViewAnswer=findViewById(R.id.textView);
         textViewAnswer.setText(cambioIdea);
@@ -101,19 +104,18 @@ public class MainActivity extends AppCompatActivity{
             date=LocalDate.now(ZoneId.systemDefault());
             EmotionalRow item = new EmotionalRow(state,intensity,date);
             Log.i("OGGETTO CREATO",item.toStringOne());
-            // create and open DB and Manager
-            dbInstance=EmotionalDatabaseAdapter.getInstance(this);
+            //open DB and Manager
             dbInstance.open();
-            DatabaseManager.setStatistics(dbInstance.getYear(),dbInstance.getMonth(),dbInstance.getWeek());
-            //EmotionalRow[] eaffaf=dbManager.getRealWeek(dbInstance.getWeek());
+            //dbInstance.deleteAll(); NEL CASO IN CUI SI VOLESSE ELIMINARE IL DB
             // add to the DB and set the item idx
-            //item.set_id(dbInstance.insert(item));
+            item.set_id(dbInstance.insert(item));
+            DatabaseManager.setStatistics(dbInstance.getYear(),dbInstance.getMonth(),dbInstance.getWeek());
             dbInstance.close();
 
-            //Intent intent=new Intent(MainActivity.this,StatisticsActivity.class);
-            //startActivity(intent);
-            //cambioIdea="Cambiato idea?";
-            //textViewAnswer.setText(cambioIdea);
+            Intent intent=new Intent(MainActivity.this,StatisticsActivity.class);
+            startActivity(intent);
+            cambioIdea="Cambiato idea?";
+            textViewAnswer.setText(cambioIdea);
         }
     }
 
@@ -128,6 +130,9 @@ public class MainActivity extends AppCompatActivity{
         switch (item.getItemId()) {
             case R.id.statistics:
 
+                dbInstance.open();
+                DatabaseManager.setStatistics(dbInstance.getYear(),dbInstance.getMonth(),dbInstance.getWeek());
+                dbInstance.close();
                 Intent statistics = new Intent(MainActivity.this, StatisticsActivity.class);
                 statistics.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityIfNeeded(statistics, 0);
@@ -136,8 +141,7 @@ public class MainActivity extends AppCompatActivity{
             case R.id.advices:
 
                 Intent advices = new Intent(this, AdvicesActivity.class);
-                advices.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                startActivityIfNeeded(advices, 0);
+                startActivity(advices);
                 return true;
         }
 

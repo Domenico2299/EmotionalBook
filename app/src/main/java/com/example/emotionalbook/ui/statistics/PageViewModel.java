@@ -1,4 +1,4 @@
-package com.example.emotionalbook.ui.main;
+package com.example.emotionalbook.ui.statistics;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;
@@ -23,4 +23,5 @@ public class PageViewModel extends ViewModel {
     public LiveData<String> getText() {
         return mText;
     }
+
 }

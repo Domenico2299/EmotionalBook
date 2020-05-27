@@ -1,4 +1,4 @@
-package com.example.emotionalbook.ui.main;
+package com.example.emotionalbook.ui.statistics;
 
 import android.content.Context;
 
@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.emotionalbook.FragmentMonth;
+import com.example.emotionalbook.FragmentWeek;
+import com.example.emotionalbook.FragmentYear;
 import com.example.emotionalbook.R;
 
 /**
@@ -27,9 +30,17 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        Fragment fragment=null;
+
+        switch (position){
+            case 0:
+                return fragment=new FragmentWeek();
+            case 1:
+                return fragment=new FragmentMonth();
+            case 2:
+                return fragment=new FragmentYear();
+            default: return fragment;
+        }
     }
 
     @Nullable
@@ -43,4 +54,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Show 3 total pages.
         return 3;
     }
+
+
 }
