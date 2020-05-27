@@ -10,15 +10,15 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/advices"
-        android:layout_width="362dp"
-        android:layout_height="495dp"
+        android:layout_width="320dp"
+        android:layout_height="450dp"
         android:gravity="center"
         android:text="primo"
-        android:textSize="30dp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintVertical_bias="0.35" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

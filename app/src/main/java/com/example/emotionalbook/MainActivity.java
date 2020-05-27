@@ -87,16 +87,16 @@ public class MainActivity extends AppCompatActivity{
                 break;
             default:
                 Toast toast=Toast. makeText(getApplicationContext(),"Inserisci uno stato emotivo!",Toast. LENGTH_SHORT);
-                toast.setMargin(100,100);
                 toast.show();
                 wrongChoise=false;
                 break;
         }
-        if(intensity==0){
-            Toast toastIntensity=Toast. makeText(getApplicationContext(),"Inserisci l'intensità!",Toast. LENGTH_SHORT);
-            toastIntensity.setMargin(100,100);
-            toastIntensity.show();
-            wrongChoise=false;
+        if(intensity==0&state!=null) {
+            if (intensity == 0) {
+                Toast toastIntensity = Toast.makeText(getApplicationContext(), "Inserisci l'intensità!", Toast.LENGTH_SHORT);
+                toastIntensity.show();
+                wrongChoise = false;
+            }
         }
 
         if(wrongChoise) {
@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity{
             cambioIdea="Cambiato idea?";
             textViewAnswer.setText(cambioIdea);
         }
+
     }
 
     @Override
