@@ -42,7 +42,7 @@ class EmotionalDatabaseAdapter {
         db.close();
     }
 
-    public void deleteAll(){
+    public void deleteAll(){//SVUOTA IL DB E AGGIORNA L'IDX A 1
         db.delete(EmotionalDatabaseContract.EmotionRows.TABLE_NAME,null,null);
         db.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + EmotionalDatabaseContract.EmotionRows.TABLE_NAME + "'");
 
@@ -64,12 +64,12 @@ class EmotionalDatabaseAdapter {
         String[] selectionArgs ={String.valueOf(date.getYear())};
         return db.query(EmotionalDatabaseContract.EmotionRows.TABLE_NAME,EmotionalDatabaseContract.columns, "substr(date,-4)=?",selectionArgs, null, null, null);
     }
-    public Cursor getMonth(){ //METODO CHE RECUPERA LE ULTIME 31 RIGHE, EQUIVALENTI AL PEGGIOR CASO (ULTIMO GIORNO DEL MESE)
+    public Cursor getMonth(){ //METODO CHE RECUPERA LE ULTIME 31 RIGHE, EQUIVALENTI ALL'ULTIMO GIORNO DEL MESE)
         String orderBy=EmotionalDatabaseContract.EmotionRows._ID+" DESC";
         String limit=String.valueOf(31);
         return db.query(EmotionalDatabaseContract.EmotionRows.TABLE_NAME,EmotionalDatabaseContract.columns, null,null, null, null, orderBy,limit);
     }
-    public Cursor getWeek(){ //METODO CHE RECUPERA LE ULTIME 31 RIGHE, EQUIVALENTI AL PEGGIOR CASO (ULTIMO GIORNO DELLA SETTIMANA)
+    public Cursor getWeek(){ //METODO CHE RECUPERA LE ULTIME 7 RIGHE, EQUIVALENTI ALL'ULTIMO GIORNO DELLA SETTIMANA)
         String orderBy=EmotionalDatabaseContract.EmotionRows._ID+" DESC";
         String limit=String.valueOf(7);
         return db.query(EmotionalDatabaseContract.EmotionRows.TABLE_NAME,EmotionalDatabaseContract.columns, null,null, null, null, orderBy,limit);

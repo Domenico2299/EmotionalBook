@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity{
         textViewAnswer=findViewById(R.id.textView);
         textViewAnswer.setText(cambioIdea);
 
+        //IMPOSTAZIONI SEEKBAR: TEXTVIEW RIFERITA, VALORI MASSIMI E SALVATAGGIO DATI
         final TextView intensitàText=findViewById(R.id.textViewIntensità);
         intensitàText.setText(String.valueOf(0));
         SeekBar seekBar=findViewById(R.id.seekBar);
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity{
         boolean wrongChoise=true;
         //Set State Column DB
         ToggleButtonGroupTableLayout radioGroup=findViewById(R.id.radGroup1);
+        //IMPOSTA LO STATO EMOTIVO SCELTO
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.radioButtonHappy:
                 state = "felice";
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity{
                 toast.show();
                 wrongChoise=false;
                 break;
-        }
+        }//VERIFICHE DI IDONEITà DEL DATO INSERITO
         if(intensity==0&state!=null) {
             if (intensity == 0) {
                 Toast toastIntensity = Toast.makeText(getApplicationContext(), "Inserisci l'intensità!", Toast.LENGTH_SHORT);
@@ -112,6 +114,7 @@ public class MainActivity extends AppCompatActivity{
             DatabaseManager.setStatistics(dbInstance.getYear(),dbInstance.getMonth(),dbInstance.getWeek());
             dbInstance.close();
 
+            //UNA VOLTA CONCLUSO L'OPERAZIONE, VAI NELLE STATISTICHE E AGGIORNA LA TEXTVIEW DELLA SCELTA STATO
             Intent intent=new Intent(MainActivity.this,StatisticsActivity.class);
             startActivity(intent);
             cambioIdea="Cambiato idea?";
@@ -130,7 +133,7 @@ public class MainActivity extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.statistics:
-
+                //VAI NELLE STATISTICHE E AGGIORNA IL DB
                 dbInstance.open();
                 DatabaseManager.setStatistics(dbInstance.getYear(),dbInstance.getMonth(),dbInstance.getWeek());
                 dbInstance.close();
@@ -140,7 +143,7 @@ public class MainActivity extends AppCompatActivity{
                 return true;
 
             case R.id.advices:
-
+                //VAI NEI CONSIGLI
                 Intent advices = new Intent(this, AdvicesActivity.class);
                 startActivity(advices);
                 return true;

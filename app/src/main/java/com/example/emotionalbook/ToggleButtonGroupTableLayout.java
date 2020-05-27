@@ -13,7 +13,8 @@ import android.widget.TableRow;
  *
  */
 public class ToggleButtonGroupTableLayout extends TableLayout  implements OnClickListener {
-
+//CLASS IMPORTATA DAL WEB, SI TRATTA DI UN CUSTOM RADIOGROUP CHE, AL POSTO DI ESTENDERE IL LINEARLAYOUT,
+// ESTENDE TABLELAYOUT, PERMETTENDO UNA GESTIONE PIù ADATTABILE DEI RADIOBUTTON UTILIZZATi NEL MAIN
     private static final String TAG = "ToggleButtonGroupTableLayout";
     private RadioButton activeRadioButton;
 

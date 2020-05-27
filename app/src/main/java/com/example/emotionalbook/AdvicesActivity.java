@@ -29,7 +29,7 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
     EmotionalDatabaseAdapter dbInstance;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {//ISTANZIAZIONE DEI VARI BUTTONE, DELLA TOOLBAR E DEL MANAGER DEI FRAGMENT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.advices_activity);
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
@@ -41,7 +41,7 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
         fragmentManager.beginTransaction().add(R.id.container,one).commit();
         getSupportActionBar().setTitle("Consigli");
     }
-    public void onClick(View v){
+    public void onClick(View v){//BOTTONI CHE INTERAGISCONO CON I FRAGMENT EMOT, FUNZIONANO COME UN ARRAY CIRCOLARE
         switch (v.getId()){
             case R.id.advicesRightArrow:
                 if(counter==2)counter=0;
@@ -72,14 +72,14 @@ public class AdvicesActivity extends AppCompatActivity implements View.OnClickLi
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
-
+                //TORNA ALLA HOME
                 Intent home = new Intent(AdvicesActivity.this, MainActivity.class);
                 home.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityIfNeeded(home, 0);
                 return true;
 
             case R.id.statistics:
-
+                //vai ALLA PAGINA STATISTICHE
                 dbInstance=EmotionalDatabaseAdapter.getInstance(this);
                 dbInstance.open();
                 DatabaseManager.setStatistics(dbInstance.getYear(),dbInstance.getMonth(),dbInstance.getWeek());

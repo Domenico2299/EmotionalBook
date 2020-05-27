@@ -29,6 +29,8 @@ public class StatisticsActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
+
+        //TOOLBAR
         Toolbar toolbar=(Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setElevation(0);
@@ -47,14 +49,14 @@ public class StatisticsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.home:
-
+                //VAI NEL MAIN
                 Intent home = new Intent(StatisticsActivity.this, MainActivity.class);
                 home.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityIfNeeded(home, 0);
                 return true;
 
             case R.id.advices:
-
+                //VAI NEI CONSIGLI
                 Intent advices = new Intent(this, AdvicesActivity.class);
                 startActivity(advices);
                 return true;

@@ -59,6 +59,8 @@ public class EmotFragmentFirst extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        //METODO CHE DEFINISCE LA VIEW DEL FRAGMENT, IMPOSTA IL CONSIGLIO IN BASE ALL'ANDAMENTO DELLA SETTIMANA, VALE PER TUTTI E 3 I FRAGMENT EMOT
         int happy=DatabaseManager.valWeek[0].intValue();
         int sad=DatabaseManager.valWeek[1].intValue();
         int stressed=DatabaseManager.valWeek[2].intValue();
